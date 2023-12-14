@@ -13,7 +13,6 @@ library(mapview)
 library(tmap)
 ```
 
-
 ```{r echo=FALSE}
 
 myapikey <- "fc489a837248834b523a1eab369df67966f37652"
@@ -27,8 +26,6 @@ myvars <- c(totalpop = "B01003_001",
             povertystatus = "B05010_001")
 ```
 
-
-
 ```{r}
 wa_counties_withgeo <- get_acs(geography = "county",
                        variables = c(myvars),
@@ -39,15 +36,12 @@ wa_counties_withgeo <- get_acs(geography = "county",
 wa_counties_withgeo
 ```
 
-
 ```{r}
 mapview(wa_counties_withgeo, zcol = "povertystatusE")
 ```
-
 
 ```{r}
 mapview(wa_counties_withgeo, zcol = "povertystatusE", 
          col.regions = RColorBrewer::brewer.pal(9, "Reds"), 
          alpha.regions = 1)
 ```
-
